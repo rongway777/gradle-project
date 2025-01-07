@@ -68,4 +68,37 @@ org.gradle.console=verbose
 
 UP-TO-DATE：任务的输入没有变化，复用之前的结果。
 
+gradle-wrapper:
+
+gradle-wrapper.jar：负责下载指定版本的gradle
+gradle-wrapper.properties：描述需要的gradle
+
+gradlew：是gradle-wrapper.jar的包装
+
+升级gradle版本：./gradlew wrapper --gradle-version 7.2
+
+
+
+命令行：
+./gradlew :taskname --exampleOption=exampleValue  给任务输入
+
+
+seetings.gradle.kts：主要的作用是把子项目添加到项目当中
+rootProject.name = "gradle-project"
+
+include("app")
+include("list")
+include("utilities")
+
+
+https://docs.gradle.org/current/userguide/build_file_basics.html
+可以添加两种依赖类型：源代码依赖和构建脚本依赖。
+
+
+插件功能：向项目贡献task、也可以向项目添加properties和方法、
+
+插件也可以提供它的配置方法：
+application {
+    mainClass = "com.example.Main"
+}
 
